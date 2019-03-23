@@ -24,13 +24,21 @@ public class Sudoku {
     }
 
     public static void main(String[] args){
-        int[][] test;
+        int[][] test = {{1,2,3,4,5,6,7,8,9},{4,5,6,7,8,9,1,2,3},{7,8,9,1,2,3,4,5,6},{3,1,2,6,4,5,9,7,8},
+                {6,4,5,9,7,8,3,1,2},{9,7,8,3,1,2,6,4,5},{2,3,1,5,6,4,8,9,7},{8,9,7,2,3,1,5,6,4},{5,6,4,8,9,7,2,3,1}};
         Sudoku obj = new Sudoku();
-        for(int i = 0; i < 500; i++){
-            test = SudokuGenerator.generator(true);
-            SudokuGenerator.writeMatrix(test);
-            if(obj.checkValid(test) == false) System.out.println("False!");
-            System.out.println(i);
-        }
+        System.out.println(obj.checkValid(test));
     }
 }
+//    public static void main(String[] args){
+//        int[][] test;
+//        int i = 100;
+//        Sudoku obj = new Sudoku();
+//        while(i > 0){
+//            test = SudokuGenerator.generator(false);
+//            if(obj.checkValid(test) == true) SudokuGenerator.writeMatrix(test);
+//            i--;
+//        }
+//    }
+
+

@@ -21,10 +21,10 @@ public class SudokuGenerator {
         }
         if(valid) return matrix;
         else{
-            matrix[random.nextInt(8) + 1][random.nextInt(8) + 1] =
-                    (matrix[random.nextInt(8) + 1][random.nextInt(8) + 1] + 1)%9;
-            matrix[random.nextInt(8) + 1][random.nextInt(8) + 1] =
-                    (matrix[random.nextInt(8) + 1][random.nextInt(8) + 1] + 8)%9;
+            int i = random.nextInt(8) + 1, j = random.nextInt(8) + 1;
+            matrix[i][j] = (matrix[i][j] + 5) %9;
+//            matrix[random.nextInt(8) + 1][random.nextInt(8) + 1] =
+//                    (matrix[random.nextInt(8) + 1][random.nextInt(8) + 1] + 7)%9;
             return matrix;
         }
     }
@@ -85,14 +85,17 @@ public class SudokuGenerator {
         System.out.println(" -----------------------");
     }
 
+//    public static void main(String[] args){
+//        int i = 100;
+//        while(i > 0){
+//            int[][] matrix = generator(true);
+//            i --;
+//            writeMatrix(matrix);
+//        }
+//    }
+
     public static void main(String[] args){
-        int i = 100;
-        while(i > 0){
-            int[][] matrix = generator(true);
-            i --;
-            writeMatrix(matrix);
-        }
-//        int[][] matrix = generator(true);
-//        writeMatrix(matrix);
+        int[][] matrix = generator(false);
+        writeMatrix(matrix);
     }
 }
